@@ -18,6 +18,7 @@ import {
 } from "@/types/tax";
 import { User, Briefcase, Building2, ArrowLeft, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ttFlag from "@/assets/tt-flag.png";
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState<TaxCategory | null>(
@@ -65,16 +66,23 @@ const Index = () => {
                 </p>
               </div>
             </div>
-            {selectedCategory && (
-              <Button
-                onClick={handleReset}
-                variant="outline"
-                className="gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Start Over
-              </Button>
-            )}
+            <div className="flex items-center gap-4">
+              {selectedCategory && (
+                <Button
+                  onClick={handleReset}
+                  variant="outline"
+                  className="gap-2"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Start Over
+                </Button>
+              )}
+              <img 
+                src={ttFlag} 
+                alt="Trinidad & Tobago Flag" 
+                className="h-8 w-auto rounded shadow-sm"
+              />
+            </div>
           </div>
         </div>
       </header>
