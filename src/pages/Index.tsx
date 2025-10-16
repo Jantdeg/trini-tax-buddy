@@ -18,6 +18,7 @@ import {
 } from "@/types/tax";
 import { User, Briefcase, Building2, ArrowLeft, Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { FeedbackButton } from "@/components/FeedbackButton";
 import ttFlag from "@/assets/tt-flag.png";
 
 const Index = () => {
@@ -184,6 +185,9 @@ const Index = () => {
               www.ird.gov.tt
             </a>
           </p>
+          <div className="flex justify-center mt-4">
+            <FeedbackButton />
+          </div>
         </div>
       </footer>
     </div>
