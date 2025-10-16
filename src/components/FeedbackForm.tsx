@@ -5,8 +5,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 import { Loader2 } from "lucide-react";
+
+// Add your Zapier webhook URL here
+const ZAPIER_WEBHOOK_URL = "YOUR_ZAPIER_WEBHOOK_URL_HERE";
 
 export const FeedbackForm = () => {
   const [message, setMessage] = useState("");
@@ -27,10 +29,10 @@ export const FeedbackForm = () => {
       return;
     }
 
-    if (!isSupabaseConfigured || !supabase) {
+    if (!ZAPIER_WEBHOOK_URL || ZAPIER_WEBHOOK_URL === "YOUR_ZAPIER_WEBHOOK_URL_HERE") {
       toast({
-        title: "Feature Unavailable",
-        description: "Feedback submission requires backend setup. The tax calculator still works!",
+        title: "Setup Required",
+        description: "Please configure your Zapier webhook URL in the FeedbackForm component.",
         variant: "destructive",
       });
       return;
@@ -39,17 +41,26 @@ export const FeedbackForm = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("feedback").insert({
+      const feedbackData = {
         page: location.pathname,
         message: message.trim(),
         email: email.trim() || null,
-      });
+        timestamp: new Date().toISOString(),
+        source: "Trini Tax Buddy"
+      };
 
-      if (error) throw error;
+      await fetch(ZAPIER_WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify(feedbackData),
+      });
 
       toast({
         title: "Thank you!",
-        description: "Your feedback has been submitted successfully.",
+        description: "Your feedback has been submitted successfully and will be added to GitHub.",
       });
 
       setMessage("");
