@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/lib/supabase";
+import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 import { Loader2 } from "lucide-react";
 
 export const FeedbackForm = () => {
@@ -22,6 +22,15 @@ export const FeedbackForm = () => {
       toast({
         title: "Error",
         description: "Please enter your feedback message.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!isSupabaseConfigured || !supabase) {
+      toast({
+        title: "Feature Unavailable",
+        description: "Feedback submission requires backend setup. The tax calculator still works!",
         variant: "destructive",
       });
       return;

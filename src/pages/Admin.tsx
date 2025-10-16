@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, MessageSquare, Mail, Calendar, MapPin } from "lucide-react";
@@ -25,6 +25,11 @@ const Admin = () => {
 
   const loadFeedback = async () => {
     try {
+      if (!isSupabaseConfigured || !supabase) {
+        setFeedback([]);
+        return;
+      }
+
       const { data, error } = await supabase
         .from("feedback")
         .select("*")
