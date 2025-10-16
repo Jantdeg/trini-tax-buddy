@@ -8,7 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 // Add your Zapier webhook URL here
-const ZAPIER_WEBHOOK_URL = "YOUR_ZAPIER_WEBHOOK_URL_HERE";
+const ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/25009943/u5j3l6v/";
 
 export const FeedbackForm = () => {
   const [message, setMessage] = useState("");
