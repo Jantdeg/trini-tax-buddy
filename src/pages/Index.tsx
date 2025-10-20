@@ -80,7 +80,7 @@ const Index = () => {
                     rel="noopener noreferrer"
                     className="inline-block text-xs text-primary hover:underline font-medium"
                   >
-                    Budget 2026 Analysis note: For Casual use only, created using Claude.ai
+                    Budget 2026: Analysis by Claude.ai
                   </a>
                 </div>
               </div>
