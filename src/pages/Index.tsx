@@ -65,14 +65,24 @@ const Index = () => {
                 <p className="text-sm text-muted-foreground">
                   Trinidad & Tobago Tax Estimation Tool
                 </p>
-                <a
-                  href="https://www.finance.gov.tt/wp-content/uploads/2025/10/Budget-Statement-FY-2026-2.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block text-xs text-primary hover:underline mt-1 font-medium"
-                >
-                  Calculates for Budget 2026
-                </a>
+                <div className="flex flex-col gap-0.5">
+                  <a
+                    href="https://www.finance.gov.tt/wp-content/uploads/2025/10/Budget-Statement-FY-2026-2.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-xs text-primary hover:underline font-medium"
+                  >
+                    Calculates for Budget 2026
+                  </a>
+                  <a
+                    href="/Budget-2026-Tax-Analysis.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-xs text-primary hover:underline font-medium"
+                  >
+                    Budget 2026 Analysis note: For Casual use only, created using Claude.ai
+                  </a>
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-4">
