@@ -29,7 +29,7 @@ export const FeedbackForm = () => {
       return;
     }
 
-    if (!ZAPIER_WEBHOOK_URL || ZAPIER_WEBHOOK_URL === "YOUR_ZAPIER_WEBHOOK_URL_HERE") {
+    if (!ZAPIER_WEBHOOK_URL) {
       toast({
         title: "Setup Required",
         description: "Please configure your Zapier webhook URL in the FeedbackForm component.",
