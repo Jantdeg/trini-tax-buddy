@@ -17,7 +17,7 @@ export const PersonalTaxForm = ({ onCalculate }: PersonalTaxFormProps) => {
   const [formData, setFormData] = useState<PersonalTaxFormData>({
     annualIncome: 0,
     allowances: {
-      personalAllowance: 72000,
+      personalAllowance: 90000,
       spouseAllowance: 0,
       dependentChildren: 0,
       dependentChildrenAmount: 0,
@@ -146,7 +146,7 @@ export const PersonalTaxForm = ({ onCalculate }: PersonalTaxFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="personalAllowance" className="flex items-center">
                 Personal Allowance (TT$)
-                <InfoTooltip content="Standard personal allowance of TT$72,000 per year. Every taxpayer is entitled to this." />
+                <InfoTooltip content="Standard personal allowance of TT$90,000 per year. Every taxpayer is entitled to this." />
               </Label>
               <Input
                 id="personalAllowance"
@@ -168,7 +168,7 @@ export const PersonalTaxForm = ({ onCalculate }: PersonalTaxFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="spouseAllowance" className="flex items-center">
                 Spouse Allowance (TT$)
-                <InfoTooltip content="If your spouse has no income or earns less than TT$72,000, you may claim up to TT$72,000" />
+                <InfoTooltip content="If your spouse has no income or earns less than TT$90,000, you may claim up to TT$90,000" />
               </Label>
               <Input
                 id="spouseAllowance"
