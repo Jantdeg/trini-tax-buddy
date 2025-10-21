@@ -75,7 +75,7 @@ const Index = () => {
                     Calculates for Budget 2026
                   </a>
                   <a
-                    href="/Budget-2026-Tax-Analysis.pdf"
+                    href="Trinidad and Tobago Tax Structure Changes Budget 2026.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block text-xs text-primary hover:underline font-medium"
